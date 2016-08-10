@@ -5,14 +5,20 @@
 <%@ page import="javax.servlet.http.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
 <title>餓揪訂餐網站</title>
-<!-- for-mobile-apps -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<f:view>
+  <h:form>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords"content="Deliccio Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta name="keywords"content=""/>
+
+   </h:form>
+</f:view>
 <script type="application/x-javascript">
-	
+
+
 addEventListener("load", function() {
     setTimeout(hideURLbar, 0);
 }, false);
@@ -30,7 +36,7 @@ function hideURLbar() {
 <link href='https://fonts.googleapis.com/css?family=UnifrakturMaguntia'rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,600italic,700,400'rel='stylesheet' type='text/css'>
 <!-- FlexSlider -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/flexslider.css" type="text/css"media="screen" />
+<p:link rel="stylesheet" href="${pageContext.request.contextPath}/css/flexslider.css" type="text/css"media="screen" />
 <script defer src="js/jquery.flexslider.js"></script>
 <script type="text/javascript">
 	$(window).load(function() {
