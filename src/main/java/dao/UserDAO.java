@@ -10,7 +10,7 @@ public interface UserDAO {
 	 * @param account
 	 * @param password
 	 * @return
-	 * @author Shan
+	 * @author 
 	 */
 	public Member getUserByAccount(String account, String password);
 
@@ -19,7 +19,7 @@ public interface UserDAO {
 	 * 
 	 * @param member
 	 * @return
-	 * @author Shan
+	 * @author 
 	 */
 	public int createOrUpdateUser(Member member);
 	

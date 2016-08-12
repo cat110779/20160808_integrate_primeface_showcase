@@ -4,27 +4,22 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	 >
 <h:head>
+
 	<title>餓揪訂餐網站</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
-
-
 	<script type="application/x-javascript">
-		
-
-
 addEventListener("load", function() {
     setTimeout(hideURLbar, 0);
 }, false);
 function hideURLbar() {
     window.scrollTo(0, 1);
 }
-
-
+	
 	</script>
 	<!-- //for-mobile-apps -->
 	<link href="${pageContext.request.contextPath}/css/bootstrap.css"
@@ -36,60 +31,57 @@ function hideURLbar() {
 		src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
 	<!-- //js -->
 	<link href='https://fonts.googleapis.com/css?family=UnifrakturMaguntia'
-		rel='stylesheet' type='text/css'>
-		<link
-			href='https://fonts.googleapis.com/css?family=Open+Sans:600,600italic,700,400'
-			rel='stylesheet' type='text/css'>
-			<!-- FlexSlider -->
-			<p:link rel="stylesheet"
-				href="${pageContext.request.contextPath}/css/flexslider.css"
-				type="text/css" media="screen" />
-			<script defer src="js/jquery.flexslider.js"></script>
-			<script type="text/javascript">
-				$(window).load(function() {
-					$('.flexslider').flexslider({
-						animation : "slide",
-						start : function(slider) {
-							$('body').removeClass('loading');
-						}
-					});
-				});
-
-				// 限制不可輸入中文字
-				function chinese_onkeyup(fmobj, cid, cvalue, msg) {
-					// fmobj : form object
-					// cid : columu name
-					// cvalue : columu value
-					// msg : alert message
-					if (!msg) {
-						msg = "請勿輸入中文字!!!";
-					}
-					if (cvalue.match(/[\u4E00-\u9FA5]/g)) {
-						alert(msg);
-						fmobj[cid].value = cvalue.replace(/[\u4E00-\u9FA5]/g,
-								"");
-					}
+		rel='stylesheet' type='text/css'></link>
+	<link
+		href='https://fonts.googleapis.com/css?family=Open+Sans:600,600italic,700,400'
+		rel='stylesheet' type='text/css'></link>
+	<!-- FlexSlider -->
+	 
+	<!-- <h:outputScript defer src = "js/jquery.flexslider.js" /> -->
+	<script type="text/javascript">
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				animation : "slide",
+				start : function(slider) {
+					$('body').removeClass('loading');
 				}
+			});
+		});
 
-				//登入
-				function login() {
-					document.getElementById("type").value = "login";
-					document.getElementById("myForm").submit();
-				}
+		// 限制不可輸入中文字
+		function chinese_onkeyup(fmobj, cid, cvalue, msg) {
+			// fmobj : form object
+			// cid : columu name
+			// cvalue : columu value
+			// msg : alert message
+			if (!msg) {
+				msg = "請勿輸入中文字!!!";
+			}
+			if (cvalue.match(/[\u4E00-\u9FA5]/g)) {
+				alert(msg);
+				fmobj[cid].value = cvalue.replace(/[\u4E00-\u9FA5]/g, "");
+			}
+		}
 
-				//修改密碼
-				function changePassword() {
-					document.getElementById("type").value = "changePassword";
-					document.getElementById("myForm").submit();
-				}
-			</script>
-			<!-- //FlexSlider -->
+		//登入
+		function login() {
+			document.getElementById("type").value = "login";
+			document.getElementById("myForm").submit();
+		}
+
+		//修改密碼
+		function changePassword() {
+			document.getElementById("type").value = "changePassword";
+			document.getElementById("myForm").submit();
+		}
+	</script>
+	<!-- //FlexSlider -->
 </h:head>
 <h:body>
-	<%
+	<!-- <%
 		HttpSession se = request.getSession();
 		se.setAttribute("account", null);
-	%>
+	%> -->
 	<!-- banner -->
 	<div class="banner">
 		<div class="container">
@@ -111,11 +103,11 @@ function hideURLbar() {
 				<div class="collapse navbar-collapse nav-wil"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<% if (se.getAttribute("account") != null) { %>
+						<!-- <% if (se.getAttribute("account") != null) { %> -->
 						<li class="active"><a href="ServiceServelet">回首頁</a></li>
 						<li><a href="menu.jsp">我要訂餐</a></li>
 						<li><a href="order.jsp">發起訂餐</a></li>
-						<li><a href="contact.jsp">聯絡我們</a></li> <% } %>
+						<li><a href="contact.jsp">聯絡我們</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse --> </nav>
@@ -125,27 +117,14 @@ function hideURLbar() {
 					<h1>使用條例</h1>
 					<br>
 						<h4 style="color: white;">1.本網站不提供任何保證。任何因本服務所造成的傷害或損失，您願意自行負責。</h4>
-						<br>
-							<h4 style="color: white;">2.您承諾絕不為任何非法目的、以任何非法方式使用本站，並承諾遵守中華民國相關法規及一切使用網際網路之國際慣例。您同意並保證不得利用本服務從事侵害他人權益或違法之行為。</h4>
-							<br>
-								<h4 style="color: white;">3.您同意本站得基於維護交易安全之考量，或違反本使用條款的明文規定及精神，終止您的密碼、帳號（或其任何部分）或本服務之使用。</h4>
-								<br>
+					</br> <br>
+						<h4 style="color: white;">2.您承諾絕不為任何非法目的、以任何非法方式使用本站，並承諾遵守中華民國相關法規及一切使用網際網路之國際慣例。您同意並保證不得利用本服務從事侵害他人權益或違法之行為。</h4>
+					</br> <br>
+						<h4 style="color: white;">3.您同意本站得基於維護交易安全之考量，或違反本使用條款的明文規定及精神，終止您的密碼、帳號（或其任何部分）或本服務之使用。</h4>
+					</br>
+
 				</div>
-				<div>
-					<table>
-						<tr>
-							<td>Name:</td>
-							<td><h:inputText value="#{user.name}" /></td>
-						</tr>
-						<tr>
-							<td>Password:</td>
-							<td><h:inputSecret value="#{user.password}" /></td>
-						</tr>
-					</table>
-					<p>
-						<h:commandButton value="Login" action="welcome" />
-					</p>
-				</div>
+
 				<div class="col-md-6 banner-info-right">
 					<div class="sap_tabs">
 						<div id="horizontalTab"
@@ -162,17 +141,18 @@ function hideURLbar() {
 									<div class="facts">
 										<div class="sign-in-form">
 											<div class="in-form">
-												<form id="myForm" method="POST" action="LoginServlet">
-													<input type="hidden" id="type" name="type" /> <input
-														type="text" name="account" placeholder="帳號"
-														required=required> <input type="password"
-														name="password" placeholder="密碼" required=required>
-															<input type="text" name="check_code" placeholder="驗證碼"
-															required=required> <img src="CheckCodeServlet" />
-																<br /> <!--<img src="/learnJS/servlet/CheckCodeServlet"/>-->
-																<div class="ckeck-bg">
-																	<div class="checkbox-form">
-																		<!--<div class="check-left">
+												<h:form id="myForm" method="post" action="LoginServlet">
+													<h:inputHidden  id="type" name="type" /> 
+													<h:inputText  name="account" placeholder="帳號"
+													required="true"	 />
+													<h:inputSecret  name="password" placeholder="密碼" required="true"></h:inputSecret>
+													<h:inputText  name="check_code" placeholder="驗證碼" required="true" ></h:inputText> 
+														 
+														<img src="CheckCodeServlet" />
+															<br /> <!--<img src="/learnJS/servlet/CheckCodeServlet"/>-->
+															<div class="ckeck-bg">
+																<div class="checkbox-form">
+																	<!--<div class="check-left">
 																<div class="check">
 																	<label class="checkbox"><input type="checkbox"name="checkbox01" checked=""><i> </i>保持登入</label>
 																</div>
@@ -180,44 +160,45 @@ function hideURLbar() {
 																	<label class="checkbox"><input type="checkbox"name="checkbox" checked=""><i> </i>記住我的密碼</label>
 																</div>
 															</div>-->
-																		<div class="check-right">
-																			<button type="button" class="btn btn-info btn-lg"
-																				data-toggle="modal" data-target="#myModal">忘記密碼</button>
-																			<button type="button" class="btn btn-info btn-lg"
-																				value="登入" onclick="login()">登入</button>
-																		</div>
-																		<div class="clearfix"></div>
+																	<div class="check-right">
+																		<button type="button" class="btn btn-info btn-lg"
+																			data-toggle="modal" data-target="#myModal">忘記密碼</button>
+																		<button type="button" class="btn btn-info btn-lg"
+																			value="登入" onclick="login()">登入</button>
 																	</div>
+																	<div class="clearfix"></div>
+																</div>
 
-																	<!-- Modal start-->
-																	<div class="modal fade" id="myModal" role="dialog">
-																		<div class="modal-dialog">
+																<!-- Modal start-->
+																<div class="modal fade" id="myModal" role="dialog">
+																	<div class="modal-dialog">
 
-																			<!-- Modal content-->
-																			<div class="modal-content">
-																				<div class="modal-header">
-																					<button type="button" class="close"
-																						data-dismiss="modal">&times;</button>
-																					<h4 class="modal-title">忘記密碼</h4>
-																				</div>
-																				<div class="modal-body">
-																					<p>請輸入你的專屬帳號及信箱，稍後將寄一個屬於您的專屬密碼。</p>
-																					<input type="text" name="againaccount"
-																						placeholder="帳號" required=required /> <input
-																						type="email" name="againemail" placeholder="信箱"
-																						required=required />
-																					<div class="modal-footer">
-																						<button type="button" class="btn btn-info btn-lg"
-																							data-dismiss="modal" onclick="changePassword()">送出</button>
-																					</div>
+																		<!-- Modal content-->
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close"
+																					data-dismiss="modal">&times;</button>
+																				<h4 class="modal-title">忘記密碼</h4>
+																			</div>
+																			<div class="modal-body">
+																				<p>請輸入你的專屬帳號及信箱，稍後將寄一個屬於您的專屬密碼。</p>
+																				<h:inputText  name="againaccount"
+																					placeholder="帳號" required="true" />
+																				 <h:inputText
+																					 name="againemail" placeholder="信箱"
+																					required="true" />
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-info btn-lg"
+																						data-dismiss="modal" onclick="changePassword()">送出</button>
 																				</div>
 																			</div>
-
 																		</div>
+
 																	</div>
-																	<!-- Modal end-->
 																</div>
-												</form>
+																<!-- Modal end-->
+															</div>
+												</h:form>
 											</div>
 										</div>
 									</div>
@@ -227,21 +208,24 @@ function hideURLbar() {
 										<div class="sign-in-form">
 											<div class="in-form Personal">
 												<p>歡迎，請輸入以下詳細信息才能註冊。</p>
-												<form method="post" action="RegistrationServlet">
-													<input type="text" name="newaccount" placeholder="帳號"
-														onkeyup="chinese_onkeyup" required=required /> <input
-														type="email" name="email" class="textbox" placeholder="信箱"
-														required=required /> <input type="password"
-														name="newpassword" placeholder="密碼" required=required />
-													<input type="password" name="again" placeholder="再次輸入密碼"
-														required=required />
+												<h:form method="post" action="RegistrationServlet">
+													<h:inputText  name="newaccount" placeholder="帳號"
+														onkeyup="chinese_onkeyup" required="true" />
+												    <h:inputText
+														 name="email" class="textbox" placeholder="信箱"
+														required="true" /> 
+													<h:inputSecret
+														name="newpassword" placeholder="密碼" required="true" />
+														
+													<h:inputSecret name="again" placeholder="再次輸入密碼"
+														required="true" />
 													<div class="c
 													heck">
-														<label class="checkbox"> <input type="checkbox"
-															name="checkbox"> <i> </i>我同意使用左邊條款 </label>
+														<label class="checkbox"> <h:selectBooleanCheckbox type="checkbox"
+															name="checkbox" /> <i> </i>我同意使用左邊條款 </label>
 													</div>
-													<input type="submit" value="送出">
-												</form>
+													<h:commandButton  value="送出" />
+												</h:form>
 											</div>
 										</div>
 									</div>
