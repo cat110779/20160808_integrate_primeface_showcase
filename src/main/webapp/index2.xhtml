@@ -36,8 +36,13 @@ function hideURLbar() {
 		href='https://fonts.googleapis.com/css?family=Open+Sans:600,600italic,700,400'
 		rel='stylesheet' type='text/css'></link>
 	<!-- FlexSlider -->
+<!-- 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/flexslider.css"  -->
+<!-- 	 type="text/css"media="screen"></link> -->
+	 <h:outputStylesheet library="css" name="${pageContext.request.contextPath}/css/flexslider.css"  /> 
 	 
-	<!-- <h:outputScript defer src = "js/jquery.flexslider.js" /> -->
+	 <h:outputScript library="js" name="jquery.flexslider.js" />
+<!-- 	<Script src="js/jquery.flexslider.js" >  -->
+
 	<script type="text/javascript">
 		$(window).load(function() {
 			$('.flexslider').flexslider({
@@ -141,12 +146,10 @@ function hideURLbar() {
 									<div class="facts">
 										<div class="sign-in-form">
 											<div class="in-form">
-												<h:form id="myForm" method="post" action="LoginServlet">
-													<h:inputHidden  id="type" name="type" /> 
-													<h:inputText  name="account" placeholder="帳號"
-													required="true"	 />
-													<h:inputSecret  name="password" placeholder="密碼" required="true"></h:inputSecret>
-													<h:inputText  name="check_code" placeholder="驗證碼" required="true" ></h:inputText> 
+												<h:form>
+													<h:inputText name="account" placeholder="帳號" required="true"	 />
+													<h:inputSecret name="password" placeholder="密碼" required="true"></h:inputSecret>
+													<h:inputText name="check_code" placeholder="驗證碼" required="true" ></h:inputText> 
 														 
 														<img src="CheckCodeServlet" />
 															<br /> <!--<img src="/learnJS/servlet/CheckCodeServlet"/>-->
@@ -163,8 +166,10 @@ function hideURLbar() {
 																	<div class="check-right">
 																		<button type="button" class="btn btn-info btn-lg"
 																			data-toggle="modal" data-target="#myModal">忘記密碼</button>
-																		<button type="button" class="btn btn-info btn-lg"
-																			value="登入" onclick="login()">登入</button>
+<!-- 																		<button type="button" class="btn btn-info btn-lg" -->
+<!-- 																			value="登入" onclick="login()">登入</button> -->
+
+																			<h:commandButton disabled="true" value="登入" onclick="alert('Hello World!');" action="#{manjorBean.login}"/>
 																	</div>
 																	<div class="clearfix"></div>
 																</div>

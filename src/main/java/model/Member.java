@@ -2,6 +2,9 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import bean.Login;
+
 import java.sql.Timestamp;
 import java.math.BigDecimal;
 import java.util.List;
@@ -46,6 +49,8 @@ public class Member implements Serializable {
 	private List<Order> orders;
 
 	public Member() {
+		Login login = new Login();
+		
 	}
 
 	
