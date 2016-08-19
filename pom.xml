@@ -6,7 +6,7 @@
 	<artifactId>myDemo</artifactId>
 	<packaging>war</packaging>
 
-	<version>ˊ6.0</version>
+	<version>6.0</version>
 	<name>myDemo Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 

@@ -11,12 +11,12 @@
 		<h:outputText value="帳號 : " />
 		<h:inputText id="username" value="#{testBean.user.account}"></h:inputText>
 		<h:message for="username"></h:message>
-		<br></br><br></br>
+		
 		
 		<h:outputText value="密碼 : " />
 		<h:inputSecret id="password" value="#{testBean.user.password}"></h:inputSecret>
 		<h:message for="password"></h:message>
-		<br></br><br></br>
+		
 		
 		<h:commandButton action="#{testBean.validateUsernamePassword}" value="Login"></h:commandButton>
 		

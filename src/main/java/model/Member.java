@@ -49,6 +49,7 @@ public class Member implements Serializable {
 	private List<Order> orders;
 
 	public Member() {
+		
 		Login login = new Login();
 		
 	}

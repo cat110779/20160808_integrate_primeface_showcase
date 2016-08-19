@@ -18,6 +18,15 @@ public class Login implements Serializable {
 
 	private User user = new User();
 	private String message;
+  private String validateUsernamePassword;
+  
+	public String getValidateUsernamePassword() {
+	return validateUsernamePassword;
+}
+
+public void setValidateUsernamePassword(String validateUsernamePassword) {
+	this.validateUsernamePassword = validateUsernamePassword;
+}
 
 	public String validateUsernamePassword() {
 		
@@ -30,10 +39,10 @@ public class Login implements Serializable {
 		
 		if(member != null) {
 			setMessage("");
-			return "shan2";
+			return "admin-service2";
 		} else {
 			setMessage("帳號密碼錯誤，請重新登入");
-			return "shan";
+			return "index2";
 		}
 	}
 
@@ -52,6 +61,7 @@ public class Login implements Serializable {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	
 	
 	
 }
