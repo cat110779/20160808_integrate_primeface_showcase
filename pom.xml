@@ -64,6 +64,15 @@
 		<!-- <artifactId>json-lib</artifactId> -->
 		<!-- <version>2.4</version> -->
 		<!-- </dependency> -->
+		
+		
+		<!-- https://mvnrepository.com/artifact/org.scala-js/scalajs-library_2.11 -->
+<dependency>
+    <groupId>org.scala-js</groupId>
+    <artifactId>scalajs-library_2.11</artifactId>
+    <version>0.6.5</version>
+</dependency>
+		
 
 		<dependency>
 			<groupId>jstl</groupId>
