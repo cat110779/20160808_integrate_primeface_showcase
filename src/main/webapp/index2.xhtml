@@ -171,11 +171,7 @@ function hideURLbar() {
 													<h:message for="password"></h:message>
 													<h:inputText name="check_code" placeholder="驗證碼"
 														required="true"></h:inputText>
-													<h:commandButton
-													class="btn btn-info btn-lg
-														action="#{testBean.validateUsernamePassword}"
-														value="	Login"></h:commandButton>
-
+													
 
 
 
@@ -200,15 +196,12 @@ function hideURLbar() {
 																</div>
 															</div>-->
 															<div class="check-right">
-																<button type="button" class="btn btn-info btn-lg"
-																	data-toggle="modal" data-target="#myModal">忘記密碼</button>
-																<button type="button" class="btn btn-info btn-lg"
-																	value="登入" onclick="login()">登入</button>
+																<h:commandButton class="btn btn-info btn-lg"
+																 	data-toggle="modal" data-target="#myModal" />
+																<h:commandButton  class="btn btn-info btn-lg"
+																	value="登入" action= "#{testBean.validateUsernamePassword()}" />
 
-																<!-- <h:commandButton
-																	actionListener="#{testBean.validateUsernamePassword}"
-																	value="Login"></h:commandButton> -->
-
+																
 															</div>
 															<div class="clearfix"></div>
 														</div>
