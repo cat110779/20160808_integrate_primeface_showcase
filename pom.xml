@@ -13,6 +13,9 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<logback.version>1.1.3</logback.version>
+		<slf4j.version>1.7.12</slf4j.version>
+		<jcl.slf4j.version>1.7.12</jcl.slf4j.version>
 
 
 	</properties>
@@ -64,15 +67,15 @@
 		<!-- <artifactId>json-lib</artifactId> -->
 		<!-- <version>2.4</version> -->
 		<!-- </dependency> -->
-		
-		
+
+
 		<!-- https://mvnrepository.com/artifact/org.scala-js/scalajs-library_2.11 -->
-<dependency>
-    <groupId>org.scala-js</groupId>
-    <artifactId>scalajs-library_2.11</artifactId>
-    <version>0.6.5</version>
-</dependency>
-		
+		<dependency>
+			<groupId>org.scala-js</groupId>
+			<artifactId>scalajs-library_2.11</artifactId>
+			<version>0.6.5</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>jstl</groupId>
@@ -179,13 +182,35 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
+		<!-- 2. Bridge logging from JCL to SLF4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${jcl.slf4j.version}</version>
+		</dependency>
 
 		<!-- Logging -->
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>1.6.1</version>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-access</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.logback-extensions</groupId>
+			<artifactId>logback-ext-spring</artifactId>
+			<version>0.1.1</version>
+		</dependency>
+
 
 		<!-- Themes -->
 		<dependency>
@@ -218,10 +243,10 @@
 			<version>2.1</version>
 		</dependency>
 		<dependency>
-					<groupId>org.primefaces.extensions</groupId>
-					<artifactId>all-themes</artifactId>
-					<version>1.0.8</version> 
-				</dependency>
+			<groupId>org.primefaces.extensions</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.8</version>
+		</dependency>
 	</dependencies>
 
 
@@ -383,7 +408,7 @@
 					<artifactId>atmosphere-runtime</artifactId>
 					<version>2.4.3</version>
 				</dependency>
-				
+
 			</dependencies>
 		</profile>
 		<profile>

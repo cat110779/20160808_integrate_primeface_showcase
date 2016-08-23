@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.padual.com/java/logback.xsd">
+	<!-- THIS IS OUR CUSTOM CONTEXT LISTENER -->
+
+	<!-- %date 顯示日期時分秒 %level LOG等級,INFO DEBUG 等 %thread 是從哪一個線程觸發 %logger{30} 
+		從哪一支程式來有加package , {}中的數字表示長度太長會以package的第1個英文字代替 %file 哪1個java檔案 %line 行數 
+		%msg LOG的訊息 -->
+
+	<!-- 寫到CONSOLE -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- deny all events with a level below INFO, that is TRACE and DEBUG -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+		<encoder>
+			<pattern>[%d{MM/dd-HH:mm:ss.SSS}] [%-5level] %msg\(%c.java:%L\)%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="org.greenpeace.controller" level="debug"
+		additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	<root level="error">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
