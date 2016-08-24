@@ -16,8 +16,10 @@
 		<logback.version>1.1.3</logback.version>
 		<slf4j.version>1.7.12</slf4j.version>
 		<jcl.slf4j.version>1.7.12</jcl.slf4j.version>
-
-
+		<cargo.container.id>tomcat7x</cargo.container.id>
+		<cargo.container.url>http://www.eu.apache.org/dist/tomcat/tomcat-7/v7.0.70/bin/apache-tomcat-7.0.70.tar.gz</cargo.container.url>
+		<cargo.container.jvmargs>-Xms96m -Xmx512m -Djava.awt.headless=true</cargo.container.jvmargs>
+		<cargo.jvm.debug.port>8000</cargo.jvm.debug.port>
 	</properties>
 
 	<dependencies>
@@ -279,15 +281,27 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.9.v20130131</version>
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>1.4.7</version>
 				<configuration>
-					<webAppConfig>
-						<contextPath>/showcase</contextPath>
-					</webAppConfig>
-					<scanIntervalSeconds>5</scanIntervalSeconds>
+					<configuration>
+						<properties>
+							<cargo.servlet.port>8080</cargo.servlet.port>
+							<cargo.tomcat.ajp.port>1099</cargo.tomcat.ajp.port>
+							<cargo.rmi.port>1099</cargo.rmi.port>
+							<cargo.logging>medium</cargo.logging>
+							<cargo.jvmargs>${cargo.container.jvmargs}</cargo.jvmargs>
+						</properties>
+					</configuration>
+					<container>
+						<containerId>${cargo.container.id}</containerId>
+						<zipUrlInstaller>
+							<url>${cargo.container.url}</url>
+						</zipUrlInstaller>
+					</container>
 				</configuration>
+				
 			</plugin>
 
 			<plugin>
