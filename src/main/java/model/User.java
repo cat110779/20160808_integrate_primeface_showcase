@@ -4,7 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class User implements Serializable{
- //設定資料型態
+ /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2322823282417821899L;
+//設定資料型態
  private int id;
  private String account;
  private String password;

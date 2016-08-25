@@ -12,7 +12,7 @@
         <locale-config>
             <default-locale>en</default-locale>
         </locale-config>
-        <el-resolver>org.primefaces.application.exceptionhandler.PrimeExceptionHandlerELResolver</el-resolver>
+      
         <resource-bundle>
             <base-name>build</base-name>
             <var>build</var>
@@ -23,10 +23,7 @@
         <phase-listener>org.primefaces.component.lifecycle.LifecyclePhaseListener</phase-listener>
     </lifecycle>
     
-    <converter>
-        <converter-id>theme</converter-id>
-        <converter-class>org.primefaces.showcase.convert.ThemeConverter</converter-class>
-    </converter>
+  
     
     <factory>
         <exception-handler-factory>org.primefaces.application.exceptionhandler.PrimeExceptionHandlerFactory</exception-handler-factory>

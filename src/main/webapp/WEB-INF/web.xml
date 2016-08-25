@@ -274,13 +274,11 @@
 	<welcome-file-list>
 		<welcome-file>faces/index.xhtml</welcome-file>
 	</welcome-file-list>
-	<error-page>
-		Missing login
+	<error-page> 
 		<error-code>401</error-code>
 		<location>/error/general-error.html</location>
 	</error-page>
-	<error-page>
-		Forbidden directory listing
+	<error-page> 
 		<error-code>403</error-code>
 		<location>/error/general-error-403.html</location>
 	</error-page>
