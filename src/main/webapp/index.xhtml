@@ -1,21 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="model.*"%>
 <%@ page import="java.util.*"%>
-<%@ page import="javax.servlet.http.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page import="javax.servlet.http.*"%> -->
 
-<head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
 <title>餓揪訂餐網站</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport"
-			content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"content="Deliccio Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript">
-
-
+	
 addEventListener("load", function() {
     setTimeout(hideURLbar, 0);
 }, false);
@@ -24,17 +26,19 @@ function hideURLbar() {
 }
 
 </script>
+
+
 <!-- //for-mobile-apps -->
-<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" type="text/css"media="all" />
-<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
 <!-- //js -->
-<link href='https://fonts.googleapis.com/css?family=UnifrakturMaguntia'rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:600,600italic,700,400'rel='stylesheet' type='text/css'>
-<!-- FlexSlider -->"src/main/web"src/main/webapp/index.jsp"app/index.jsp"
-<p:link rel="stylesheet" href="${pageContext.request.contextPath}/css/flexslider.css" type="text/css"media="screen" />
-<script defer src="js/jquery.flexslider.js"></script>
+<link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:600,600italic,700,400" rel="stylesheet" type="text/css"/>
+<!-- FlexSlider -->
+<link rel="stylesheet" href="css/flexslider.css" type="text/css"media="screen" />
+<script src="js/jquery.flexslider.js"></script>
 <script type="text/javascript">
 	$(window).load(function() {
 		$('.flexslider').flexslider({
@@ -76,13 +80,12 @@ function hideURLbar() {
 
 
 </script>
-<!-- //FlexSlider -->
-</head>
+</h:head>
 <body>
-	<%
+	<!-- <%
 		HttpSession se = request.getSession();
-		se.setAttribute("account", null);
-	%>
+		se.setAttribute("account", n sull);
+	%> -->
 	<!-- banner -->
 	<div class="banner">
 		<div class="container">
@@ -93,7 +96,7 @@ function hideURLbar() {
 						<span class="sr-only">Toggle navigation</span> 
 						<span class="icon-bar"></span> <span class="icon-bar"></span> 
 						<span class="icon-bar"></span>
-					</button>
+					<button>
 					<div class="logo">
 						<a class="navbar-brand" href="Index.jsp"><b>餓揪訂餐</b><span>Healthy And Tasty Food</span></a>
 					</div>
@@ -101,16 +104,16 @@ function hideURLbar() {
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse nav-wil"id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<%
+						<!-- <%
 							if (se.getAttribute("account") != null) {
-						%>
+						%> -->
 						<li class="active"><a href="ServiceServelet">回首頁</a></li>
 						<li><a href="menu.jsp">我要訂餐</a></li>
 						<li><a href="order.jsp">發起訂餐</a></li>
 						<li><a href="contact.jsp">聯絡我們</a></li>
-						<%
+						<!-- <%
 							}
-						%>
+						%> -->
 					</ul>
 				</div>
 				<!-- /.navbar-collapse --> </nav>
@@ -139,11 +142,11 @@ function hideURLbar() {
 									<div class="facts">
 										<div class="sign-in-form">
 											<div class="in-form">
-												<form id="myForm" method="POST" action="LoginServlet">
+												<h:form id="myForm" method="post" action="LoginServlet">
 													<input type="hidden" id="type" name="type"/>
-													<input type="text" name="account" placeholder="帳號" required=required > 
-													<input type="password"name="password" placeholder="密碼" required=required >
-													<input type="text" name="check_code" placeholder="驗證碼" required=required > 
+													<h:inputText type="text" name="account" placeholder="帳號" required=required ></h:inputText>
+													<h:inputText type="password"name="password" placeholder="密碼" required=required ></h:inputText>
+													<h:inputText type="text" name="check_code" placeholder="驗證碼" required=required ></h:inputText>
 													<img src="CheckCodeServlet" />
 													<br />
 													<!--<img src="/learnJS/servlet/CheckCodeServlet"/>-->
@@ -158,8 +161,8 @@ function hideURLbar() {
 																</div>
 															</div>-->
 															<div class="check-right">
-																<button type="button" class="btn btn-info btn-lg"data-toggle="modal" data-target="#myModal">忘記密碼</button>
-																<button type="button" class="btn btn-info btn-lg" value="登入" onclick="login()" >登入</button>
+																<h:commandButton type="button" class="btn btn-info btn-lg"data-toggle="modal" data-target="#myModal" value="忘記密碼"></h:commandButton>
+																<h:commandButton type="button" class="btn btn-info btn-lg" value="登入" onclick="login()" value="登入"></h:commandButton>
 															</div>
 															<div class="clearfix"></div>
 														</div>
@@ -176,10 +179,10 @@ function hideURLbar() {
 																			</div>
 																			<div class="modal-body">
 																			<p>請輸入你的專屬帳號及信箱，稍後將寄一個屬於您的專屬密碼。</p>
-																					<input type="text" name="againaccount" placeholder="帳號" required=required /> 
-																					<input type="email"name="againemail" placeholder="信箱" required=required />
+																					<h:inputText type="text" name="againaccount" placeholder="帳號" required=required ></h:inputText>
+																					<h:inputText type="email"name="againemail" placeholder="信箱" required=required ></h:inputText>
 																					<div class="modal-footer">
-																						<button type="button" class="btn btn-info btn-lg" data-dismiss="modal" onclick="changePassword()">送出</button>
+																						<button type="button" class="btn btn-info btn-lg" data-dismiss="modal" onclick="changePassword()" >送出</button>
 																					</div>
 																			</div>
 																		</div>
@@ -188,7 +191,7 @@ function hideURLbar() {
 																</div>
 																<!-- Modal end-->
 													</div>
-												</form>
+												</h:form>
 											</div>
 										</div>
 									</div>       
@@ -198,20 +201,20 @@ function hideURLbar() {
 										<div class="sign-in-form">
 											<div class="in-form Personal">
 												<p>歡迎，請輸入以下詳細信息才能註冊。</p>
-												<form method="post" action="RegistrationServlet">
-													<input type="text" name="newaccount" placeholder="帳號" onkeyup="chinese_onkeyup" required=required />
-													<input type="email" name="email" class="textbox"placeholder="信箱" required=required /> 
-													<input type="password"name="newpassword" placeholder="密碼" required=required /> 
-													<input type="password" name="again" placeholder="再次輸入密碼" required=required />
+												<h:form method="post" action="RegistrationServlet">
+													<h:inputText type="text" name="newaccount" placeholder="帳號" onkeyup="chinese_onkeyup" required=required ></h:inputText>
+													<h:inputText type="email" name="email" class="textbox"placeholder="信箱" required=required ></h:inputText> 
+													<h:inputText type="password"name="newpassword" placeholder="密碼" required=required ></h:inputText>
+													<h:inputText type="password" name="again" placeholder="再次輸入密碼" required=required ></h:inputText>
 													<div class="c
 													heck">
 														<label class="checkbox">
-														<input type="checkbox"name="checkbox" >
+														<h:inputText type="checkbox"name="checkbox" ></h:inputText>
 														<i> </i>我同意使用左邊條款
 														</label>
 													</div>
-													<input type="submit" value="送出">
-												</form>
+													<h:inputText type="submit" value="送出"></h:inputText>
+												</h:form>
 											</div>
 										</div>
 									</div>

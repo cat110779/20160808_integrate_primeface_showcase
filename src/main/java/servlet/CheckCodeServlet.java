@@ -65,7 +65,7 @@ public class CheckCodeServlet extends HttpServlet {
 
 		// 產生隨機的驗證碼
 		char[] rands = generateCheckCode();
-
+		System.out.println("checkout images: "+String.copyValueOf(rands));
 		// 產生圖像
 		drawBackground(g);
 		drawRands(g, rands);
@@ -73,7 +73,7 @@ public class CheckCodeServlet extends HttpServlet {
 		// 結束圖像的繪制過程，完成圖像
 		g.dispose();
 
-		// 將圖像輸出到客戶端
+		// 將圖像輸出到客戶端String
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 		ImageIO.write(image, "JPEG", bos);
 		byte[] buf = bos.toByteArray();

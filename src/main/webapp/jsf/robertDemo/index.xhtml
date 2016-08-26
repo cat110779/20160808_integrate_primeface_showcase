@@ -24,18 +24,33 @@
 			<h:outputLabel for="password">Password:</h:outputLabel>
 
 			<h:inputText id="password" value="#{loginCtrl.user.password}" />
+			<h:outputLabel for="checkout">checkout:</h:outputLabel>
 
+			<h:inputText id="checkout" value="#{loginCtrl.checkout}" />
 		</h:panelGrid>
 
 		<h:commandButton value="Login" action="#{loginCtrl.login}"
 			  />
 
-		<h:commandButton value="Logout" acion="#{loginCtrl.logout}"
+<p:commandButton value="忘記密碼" type="button" onclick="PF('dlg1').show();" />
+ 
+		<h:commandButton value="Logout" action="#{loginCtrl.logout}"
 			 />
+			 <img src="#{request.contextPath}/CheckCodeServlet" /><br/>
 #{loginCtrl.message}
 	</h:form>
 
-
-
+<h:form>
+<p:dialog header="忘記密碼" widgetVar="dlg1" minHeight="40">
+    <h:outputText value="請輸入你的專屬帳號及信箱，稍後將寄一個屬於您的專屬密碼。" />
+    <br/>
+    <h:inputText id="username2" value="#{loginCtrl.user.account}" />
+    <br/>
+    <h:inputText id="email" value="#{loginCtrl.user.email}" />
+    <br/>
+     <p:commandButton value="Non-Ajax Submit" id="nonAjax" actionListener="#{loginCtrl.forgottenPW}" ajax="false" />
+    <p:commandButton value="送出" type="button" action="#{loginCtrl.forgottenPW}" />
+</p:dialog>
+</h:form>
 </h:body>
 </html>
