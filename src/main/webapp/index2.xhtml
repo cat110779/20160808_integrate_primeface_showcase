@@ -20,12 +20,16 @@
 		
 		
 		
+		
+		
 addEventListener("load", function() {
     setTimeout(hideURLbar, 0);
 }, false);
 function hideURLbar() {
     window.scrollTo(0, 1);
 }
+	
+	
 	
 	
 	
@@ -171,7 +175,7 @@ function hideURLbar() {
 													<h:message for="password"></h:message>
 													<h:inputText name="check_code" placeholder="驗證碼"
 														required="true"></h:inputText>
-													
+
 
 
 
@@ -181,8 +185,8 @@ function hideURLbar() {
 													<h:inputSecret name="password" placeholder="密碼"
 														required="true"></h:inputSecret> -->
 
-
-													<img src="CheckCodeServlet" />
+													<h:graphicImage value="CheckCodeServlet" />
+												<!-- 	<img src="CheckCodeServlet" /> -->
 													<br />
 													<!--<img src="/learnJS/servlet/CheckCodeServlet"/>-->
 													<div class="ckeck-bg">
@@ -197,11 +201,11 @@ function hideURLbar() {
 															</div>-->
 															<div class="check-right">
 																<h:commandButton class="btn btn-info btn-lg"
-																 	data-toggle="modal" data-target="#myModal" />
-																<h:commandButton  class="btn btn-info btn-lg"
-																	value="登入" action= "#{testBean.validateUsernamePassword()}" />
+																	data-toggle="modal" data-target="#myModal" />
+																<h:commandButton class="btn btn-info btn-lg" value="登入"
+																	action="#{testBean.validateUsernamePassword()}" />
 
-																
+
 															</div>
 															<div class="clearfix"></div>
 														</div>

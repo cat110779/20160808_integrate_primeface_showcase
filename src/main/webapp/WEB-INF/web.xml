@@ -99,7 +99,7 @@
 	<servlet>
 		<servlet-name>Servlet</servlet-name>
 		<servlet-class>servlet.LoginServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
+		
 		<async-supported>true</async-supported>
 	</servlet>
 
