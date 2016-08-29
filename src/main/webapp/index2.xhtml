@@ -3,38 +3,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" 
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-
 	<title>餓揪訂餐網站</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</f:facet>
 	<meta name="keywords" content="" />
-	<script type="application/x-javascript">
-		
-		
-		
-		
-		
-		
-		
-addEventListener("load", function() {
-    setTimeout(hideURLbar, 0);
-}, false);
-function hideURLbar() {
-    window.scrollTo(0, 1);
-}
 	
-	
-	
-	
-	
-	
-	
-	
-	</script>
+
 	<!-- //for-mobile-apps -->
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css"
 		media="all" />
@@ -55,16 +37,7 @@ function hideURLbar() {
 	<!-- <h:outputScript library="js" name="jquery.flexslider.js" /> -->
 	<!-- <script src="js/jquery.flexslider.js"></script>
  -->
-	<script type="text/javascript">
-		$(window).load(function() {
-			$('.flexslider').flexslider({
-				animation : "slide",
-				start : function(slider) {
-					$('body').removeClass('loading');
-				}
-			});
-		});
-
+	
 		// 限制不可輸入中文字
 		function chinese_onkeyup(fmobj, cid, cvalue, msg) {
 			// fmobj : form object
@@ -161,13 +134,13 @@ function hideURLbar() {
 												<h:form>
 
 													<h:outputText value="帳號 : " />
-													<h:inputText id="username" value="#{testBean.user.account}"></h:inputText>
+													<h:inputText id="username" value="#{logintest.user.account}"></h:inputText>
 													<h:message for="username"></h:message>
 
 
 													<h:outputText value="密碼 : " />
 													<h:inputSecret id="password"
-														value="#{testBean.user.password}"></h:inputSecret>
+														value="#{logintest.user.password}"></h:inputSecret>
 													<h:message for="password"></h:message>
 													<h:inputText name="check_code" placeholder="驗證碼"
 														required="true"></h:inputText>
@@ -184,7 +157,9 @@ function hideURLbar() {
 
 													<img src="CheckCodeServlet" />
 													<br />
+													</h:form>
 													<!--<img src="/learnJS/servlet/CheckCodeServlet"/>-->
+													<h:form>
 													<div class="ckeck-bg">
 														<div class="checkbox-form">
 															<!--<div class="check-left">
@@ -197,9 +172,9 @@ function hideURLbar() {
 															</div>-->
 															<div class="check-right">
 																<h:commandButton class="btn btn-info btn-lg"
-																 	data-toggle="modal" data-target="#myModal" />
+																 	value="忘記密碼" data-toggle="modal" data-target="#myModal"  ></h:commandButton>
 																<h:commandButton  class="btn btn-info btn-lg"
-																	value="登入" action= "#{testBean.validateUsernamePassword()}" />
+																	value="登入"  action="admin-services.xhtml" ></h:commandButton>
 
 																
 															</div>
