@@ -3,8 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui" 
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	
 <h:head>
 	<title>餓揪訂餐網站</title>
 	<f:facet name="first">
@@ -15,7 +17,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 	</f:facet>
 	<meta name="keywords" content="" />
-	
+
 
 	<!-- //for-mobile-apps -->
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css"
@@ -37,35 +39,8 @@
 	<!-- <h:outputScript library="js" name="jquery.flexslider.js" /> -->
 	<!-- <script src="js/jquery.flexslider.js"></script>
  -->
-	
-		// 限制不可輸入中文字
-		function chinese_onkeyup(fmobj, cid, cvalue, msg) {
-			// fmobj : form object
-			// cid : columu name
-			// cvalue : columu value
-			// msg : alert message
-			if (!msg) {
-				msg = "請勿輸入中文字!!!";
-			}
-			if (cvalue.match(/[\u4E00-\u9FA5]/g)) {
-				alert(msg);
-				fmobj[cid].value = cvalue.replace(/[\u4E00-\u9FA5]/g, "");
-			}
-		}
 
-		//登入
-		function login() {
-			document.getElementById("type").value = "login";
-			document.getElementById("myForm").submit();
-		}
 
-		//修改密碼
-		function changePassword() {
-			document.getElementById("type").value = "changePassword";
-			document.getElementById("myForm").submit();
-		}
-	</script>
-	<!-- //FlexSlider -->
 </h:head>
 <h:body>
 	<!-- <%
@@ -131,52 +106,32 @@
 									<div class="facts">
 										<div class="sign-in-form">
 											<div class="in-form">
-												<h:form>
+												<h:form id="myForm">
 
-													<h:outputText value="帳號 : " />
-													<h:inputText id="username" value="#{logintest.user.account}"></h:inputText>
-													<h:message for="username"></h:message>
+													<h:inputText type="text" name="account" a:placeholder="帳號"
+														value="#{test.user.account}"></h:inputText>
+													<h:inputText type="password" name="password"
+														a:placeholder="密碼" value="#{test.user.password}"></h:inputText>
+													<!-- <h:inputText type="text" name="check_code" a:placeholder="驗證碼" />
 
-
-													<h:outputText value="密碼 : " />
-													<h:inputSecret id="password"
-														value="#{logintest.user.password}"></h:inputSecret>
-													<h:message for="password"></h:message>
-													<h:inputText name="check_code" placeholder="驗證碼"
-														required="true"></h:inputText>
-													
-
-
-
-
-													<!-- <h:inputText name="account" placeholder="帳號"
-														required="true" />
-													<h:inputSecret name="password" placeholder="密碼"
-														required="true"></h:inputSecret> -->
-
-
-													<img src="CheckCodeServlet" />
+             <img src="CheckCodeServlet" /> -->
 													<br />
-													</h:form>
 													<!--<img src="/learnJS/servlet/CheckCodeServlet"/>-->
-													<h:form>
 													<div class="ckeck-bg">
 														<div class="checkbox-form">
 															<!--<div class="check-left">
-																<div class="check">
-																	<label class="checkbox"><input type="checkbox"name="checkbox01" checked=""><i> </i>保持登入</label>
-																</div>
-																<div class="check">
-																	<label class="checkbox"><input type="checkbox"name="checkbox" checked=""><i> </i>記住我的密碼</label>
-																</div>
-															</div>-->
+                <div class="check">
+                 <label class="checkbox"><input type="checkbox"name="checkbox01" checked=""><i> </i>保持登入</label>
+                </div>
+                <div class="check">
+                 <label class="checkbox"><input type="checkbox"name="checkbox" checked=""><i> </i>記住我的密碼</label>
+                </div>
+               </div>-->
 															<div class="check-right">
 																<h:commandButton class="btn btn-info btn-lg"
-																 	value="忘記密碼" data-toggle="modal" data-target="#myModal"  ></h:commandButton>
-																<h:commandButton  class="btn btn-info btn-lg"
-																	value="登入"  action="admin-services.xhtml" ></h:commandButton>
-
-																
+																	value="忘記密碼" />
+																<h:commandButton class="btn btn-info btn-lg" value="登入"
+																	onclick="login()" action="#{test.login}" />
 															</div>
 															<div class="clearfix"></div>
 														</div>
@@ -194,10 +149,9 @@
 																	</div>
 																	<div class="modal-body">
 																		<p>請輸入你的專屬帳號及信箱，稍後將寄一個屬於您的專屬密碼。</p>
-																		<h:inputText name="againaccount" placeholder="帳號"
-																			required="true" />
-																		<h:inputText name="againemail" placeholder="信箱"
-																			required="true" />
+																		<h:inputText name="againaccount" placeholder="帳號" />
+																		<input type="email" name="againemail" placeholder="信箱" />
+
 																		<div class="modal-footer">
 																			<button type="button" class="btn btn-info btn-lg"
 																				data-dismiss="modal" onclick="changePassword()">送出</button>
@@ -229,8 +183,7 @@
 
 													<h:inputSecret name="again" placeholder="再次輸入密碼"
 														required="true" />
-													<div class="c
-													heck">
+													<div class="check">
 														<label class="checkbox"> <h:selectBooleanCheckbox
 																type="checkbox" name="checkbox" /> <i> </i>我同意使用左邊條款
 														</label>
