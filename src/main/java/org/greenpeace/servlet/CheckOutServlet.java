@@ -121,7 +121,7 @@ public class CheckOutServlet extends HttpServlet {
 					customer.setMoney(money);
 					customer.setStatus("未取餐");
 					customer.setCDate(c_date);
-					customer.setOrder_id(order_id);
+					customer.setOrderId(order_id);
 	
 					dao.createCustomer(customer);
 					

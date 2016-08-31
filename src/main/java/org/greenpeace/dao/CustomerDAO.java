@@ -283,7 +283,7 @@ public class CustomerDAO extends Database {
 			ps.setInt(4, model.getMoney());
 			ps.setTimestamp(5, model.getCDate());
 			ps.setString(6, model.getStatus());
-			ps.setInt(7, model.getOrder_id());
+			ps.setInt(7, model.getOrderId());
 			results = ps.executeUpdate();
 			System.out.println("訂單OK");
 		} catch (Exception e) {
