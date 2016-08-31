@@ -99,7 +99,7 @@
 
 	<servlet>
 		<servlet-name>Servlet</servlet-name>
-		<servlet-class>servlet.LoginServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.LoginServlet</servlet-class>
 		<load-on-startup>4</load-on-startup>
 		<async-supported>true</async-supported>
 	</servlet>
@@ -112,18 +112,18 @@
 
 		<display-name>LoginServlet</display-name>
 		<servlet-name>LoginServlet</servlet-name>
-		<servlet-class>servlet.LoginServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.LoginServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet</url-pattern>
 	</servlet-mapping>
 
-	<servlet>
+	<servlet> 
 
 		<display-name>RegistrationServlet</display-name>
 		<servlet-name>RegistrationServlet</servlet-name>
-		<servlet-class>servlet.RegistrationServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.RegistrationServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>RegistrationServlet</servlet-name>
@@ -144,7 +144,7 @@
 
 		<display-name>BeforeOrderServlet</display-name>
 		<servlet-name>BeforeOrderServlet</servlet-name>
-		<servlet-class>servlet.BeforeOrderServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.BeforeOrderServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>BeforeOrderServlet</servlet-name>
@@ -154,7 +154,7 @@
 
 		<display-name>CardServlet</display-name>
 		<servlet-name>CardServlet</servlet-name>
-		<servlet-class>servlet.CardServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.CardServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CardServlet</servlet-name>
@@ -164,7 +164,7 @@
 
 		<display-name>CheckCodeServlet</display-name>
 		<servlet-name>CheckCodeServlet</servlet-name>
-		<servlet-class>servlet.CheckCodeServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.CheckCodeServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CheckCodeServlet</servlet-name>
@@ -174,7 +174,7 @@
 
 		<display-name>ServiceServelet</display-name>
 		<servlet-name>ServiceServelet</servlet-name>
-		<servlet-class>servlet.ServiceServelet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.ServiceServelet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ServiceServelet</servlet-name>
@@ -184,7 +184,7 @@
 
 		<display-name>UpdateStoreServlet</display-name>
 		<servlet-name>UpdateStoreServlet</servlet-name>
-		<servlet-class>servlet.UpdateStoreServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.UpdateStoreServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UpdateStoreServlet</servlet-name>
@@ -194,7 +194,7 @@
 
 		<display-name>AddServlet</display-name>
 		<servlet-name>AddServlet</servlet-name>
-		<servlet-class>servlet.AddServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.AddServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AddServlet</servlet-name>
@@ -204,7 +204,7 @@
 
 		<display-name>TakeMealServlet</display-name>
 		<servlet-name>TakeMealServlet</servlet-name>
-		<servlet-class>servlet.TakeMealServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.TakeMealServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>TakeMealServlet</servlet-name>
@@ -214,7 +214,7 @@
 
 		<display-name>OrderServlet</display-name>
 		<servlet-name>OrderServlet</servlet-name>
-		<servlet-class>servlet.OrderServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.OrderServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>OrderServlet</servlet-name>
@@ -224,7 +224,7 @@
 
 		<display-name>Startservlet</display-name>
 		<servlet-name>Startservlet</servlet-name>
-		<servlet-class>servlet.Startservlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.Startservlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Startservlet</servlet-name>
@@ -234,7 +234,7 @@
 
 		<display-name>CheckOutServlet</display-name>
 		<servlet-name>CheckOutServlet</servlet-name>
-		<servlet-class>servlet.CheckOutServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.CheckOutServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CheckOutServlet</servlet-name>
@@ -244,7 +244,7 @@
 
 		<display-name>ContactServlet</display-name>
 		<servlet-name>ContactServlet</servlet-name>
-		<servlet-class>servlet.ContactServlet</servlet-class>
+		<servlet-class>org.greenpeace.servlet.ContactServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ContactServlet</servlet-name>

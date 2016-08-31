@@ -1,9 +1,9 @@
-<%@page import="model.OrderSuper"%>
-<%@page import="model.Order"%>
-<%@page import="model.CustomerSuper"%>
+<%@page import="org.greenpeace.bean.OrderSuper"%>
+<%@page import="org.greenpeace.bean.Order"%>
+<%@page import="org.greenpeace.bean.CustomerSuper"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="model.Deposit"%>
+<%@page import="org.greenpeace.bean.Deposit"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

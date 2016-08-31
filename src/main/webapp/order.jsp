@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="model.Restaurant"%>
-<%@ page import="dao.RestaurantDAO"%>
+<%@ page import="org.greenpeace.bean.Restaurant"%>
+<%@ page import="org.greenpeace.dao.RestaurantDAO"%>
 <%@ page import="java.util.*"%>
 <%@ page import="javax.servlet.http.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

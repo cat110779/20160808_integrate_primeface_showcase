@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="dao.OrderDAO" %>
-<%@ page import="dao.CustomerDAO" %>
-<%@ page import="model.Order" %>
-<%@ page import="model.Customer" %>
+<%@ page import="org.greenpeace.dao.OrderDAO" %>
+<%@ page import="org.greenpeace.dao.CustomerDAO" %>
+<%@ page import="org.greenpeace.bean.Order" %>
+<%@ page import="org.greenpeace.bean.Customer" %>
 
 <%@ page import="java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

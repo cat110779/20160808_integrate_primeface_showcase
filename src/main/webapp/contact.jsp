@@ -5,7 +5,7 @@
 	<!-- xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets" -->
 	 
-<h:head>
+
 <title>餓揪訂餐網站</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,7 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<img alt="" width="450px" height="300px" src="images/contact.jpg" onload="resizeImg(this)">
 				</div>
 				<div class="contact-right">
-					<form method="POST" action="ContactServlet">
+					<form method="post" action="ContactServlet">
 						<input type="email" name="email" placeholder="信箱" required=required>
 						<input type="text"  name="Subject" id="tt" placeholder="主旨" required=required>
 						<textarea type="text" id="myTextarea" name="x"  placeholder="建議" required=required></textarea>
