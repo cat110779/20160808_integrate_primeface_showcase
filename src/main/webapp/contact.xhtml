@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	
+<h:head>
+	<title>餓揪訂餐網站</title>
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</f:facet>
+	<meta name="keywords" content="" />
+
+
+	<!-- //for-mobile-apps -->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css"
+		media="all" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- js -->
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<!-- //js -->
+	<link href='https://fonts.googleapis.com/css?family=UnifrakturMaguntia'
+		rel='stylesheet' type='text/css'></link>
+	<link
+		href='https://fonts.googleapis.com/css?family=Open+Sans:600,600italic,700,400'
+		rel='stylesheet' type='text/css'></link>
+	<!-- FlexSlider -->
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css"
+		media="screen" />
+	<!-- <h:outputStylesheet library="css" name="css/flexslider.css" /> -->
+
+	<!-- <h:outputScript library="js" name="jquery.flexslider.js" /> -->
+	<!-- <script src="js/jquery.flexslider.js"></script>
+ -->
+
+
+</h:head>
+<h:body>
+
+<!-- banner -->
+	<div class="banner1">
+		<div class="container">
+			<div class="header-nav">
+				<nav class="navbar navbar-default">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					  </button>
+						<div class="logo">
+							<a class="navbar-brand" href="Index.jsp"><b>餓揪訂餐 </b> <span>Healthy And Tasty Food</span></a>
+						</div>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					 <ul class="nav navbar-nav">
+						<li><a href="ServiceServelet">回首頁</a></li>
+						<li><a href="menu.jsp">我要訂餐</a></li>
+						<li><a href="order.jsp">發起訂餐</a></li>
+						<li class="active"><a href="contact.jsp">聯絡我們</a></li>
+                        <li><a href="Index.jsp">登出</a>  </li> 
+					  </ul>
+					</div><!-- /.navbar-collapse -->
+				</nav>
+			</div>
+		</div>
+	</div>
+<!-- //banner -->
+<!-- contact -->
+	<div class="contact">
+		<div class="container">
+			<h3>聯絡我們</h3>
+			<div class="line">
+			</div>
+			<div class="contact-grid">
+				<div class="contact-left">
+				<!-- <img alt="" width="450px" height="300px" src="images/contact.jpg" onload="resizeImg(this)"> -->
+				</div>
+				<div class="contact-right">
+					<h:form method="post" action="ContactServlet">
+					<h:inputText type="email" value="email"placeholder="信箱" ></h:inputText>
+					<h:inputText type="text" value="主旨" ></h:inputText>
+					<h:inputText type="email" value="建議" ></h:inputText>
+					<h:commandButton type=submit value="送出" ></h:commandButton>>
+					
+						<!-- <input type="email" name="email" placeholder="信箱" required=required>
+						<input type="text"  name="Subject" id="tt" placeholder="主旨" required=required>
+						<textarea type="text" id="myTextarea" name="x"  placeholder="建議" required=required></textarea>
+						<div class="clearfix"> </div>
+						<input type="submit" value="送出" onclick="my()"> -->
+					</h:form>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //contact -->
+<!--footer-->
+	<div class="footer-bottom">
+		<div class="container">		
+			<p>&copy;  - Copyright 2016© All rights reserved.</p>					
+		</div>
+	</div>
+<!--//footer-->	
+<!-- for bootstrap working -->
+		<script src="js/bootstrap.js"> </script>
+<!-- //for bootstrap working -->
+</h:body>
+</html>
