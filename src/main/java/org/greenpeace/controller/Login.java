@@ -3,6 +3,7 @@ package org.greenpeace.controller;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.servlet.http.HttpSession;
@@ -23,6 +24,7 @@ import org.slf4j.LoggerFactory;
  * The Class LoginController.
  */
 @ManagedBean(name = "test")
+@SessionScoped
 public class Login {
 	
 	

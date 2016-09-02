@@ -6,7 +6,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
-	
+
 <h:head>
 	<title>餓揪訂餐網站</title>
 	<f:facet name="first">
@@ -43,7 +43,7 @@
 
 </h:head>
 <h:body>
-	
+
 	<script>
 		(function(i, s, o, g, r, a, m) {
 			i['GoogleAnalyticsObject'] = r;
@@ -94,7 +94,7 @@
 	<!-- services -->
 	<div class="services">
 		<div class="container">
-			<h3>的個人紀錄   (餘額 : )</h3>
+			<h3>的個人紀錄 (餘額 : )</h3>
 			<div class="line"></div>
 			<div class="grid_3 grid_5">
 				<div class="bs-example bs-example-tabs" role="tabpanel"
@@ -112,49 +112,47 @@
 						<li role="presentation" class="dropdown"><a href="#"
 							id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown"
 							aria-controls="myTabDrop1-contents">管理者權限 <span class="caret"></span></a></li>
-							<ul class="dropdown-menu" role="menu"
-								aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
-								<li><a href="card.jsp">儲值</a></li>
-								<li><a href="take-meal.jsp">確認取餐</a></li>
-							</ul>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1"
+							id="myTabDrop1-contents">
+							<li><a href="card.jsp">儲值</a></li>
+							<li><a href="take-meal.jsp">確認取餐</a></li>
+						</ul>
 					</ul>
+					
 					<div id="myTabContent" class="tab-content">
 						<div role="tabpanel" class="tab-pane fade in active" id="home"
 							aria-labelledby="home-tab">
 							<div class="bs-docs-example">
 								<br></br>
-								<table class="table table-hover">
-									<thead>
+								
+									
 										<tr>
 											<th>序號</th>
 											<th>儲值金額</th>
 											<th>儲值日期</th>
 										</tr>
-									</thead>
-									<tbody>
-										<!-- for迴圈跑Deposit資料 -->
-										<!-- <%
-											ArrayList<Deposit> list = null;
-															if(request.getAttribute("depositlist") != null){
-																list = (ArrayList<Deposit>)request.getAttribute("depositlist");
-															} else {
-																list = new ArrayList<Deposit>();
-															}
-														
-															int index = 1;
-															for(Deposit data : list){
-										%>
-										<tr>
-											<td><%=index%></td>
-											<td><%=data.getDepositCash()%></td>
-											<td><%=data.getTime()%></td>
-										</tr>
-										<%
-											index++;
-															}
-										%> -->
-									</tbody>
-								</table>
+									<h:form>
+						<h:commandButton value="aaa" action="#{depositcash.depoist}" />
+<h:dataTable value="#{depositcash.rlist}" var="deposit">
+   
+   <h:column>    				
+      				
+      #{deposit.id}
+      #{deposit.depositCash}
+       #{deposit.depositTime}
+   </h:column>
+</h:dataTable>
+
+
+
+
+
+
+					</h:form>
+
+
+
+							
 							</div>
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="profile"
@@ -241,7 +239,7 @@
 								</table>
 							</div>
 						</div>
-						
+
 						<div role="tabpanel" class="tab-pane fade" id="dropdown2"
 							aria-labelledby="dropdown2-tab">
 							<div class="bs-docs-example">
@@ -255,14 +253,14 @@
 										</tr>
 									</thead>
 									<tbody>
-										
+
 									</tbody>
 								</table>
 							</div>
 						</div>
-						
-						
-						
+
+
+
 					</div>
 				</div>
 			</div>
