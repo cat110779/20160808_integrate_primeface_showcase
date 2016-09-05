@@ -1,17 +1,16 @@
 package org.greenpeace.controller;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+
 import java.util.List;
 
-import javax.accessibility.AccessibleRelation;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.mail.search.IntegerComparisonTerm;
+
 import javax.servlet.http.HttpSession;
 
 import org.greenpeace.bean.Deposit;

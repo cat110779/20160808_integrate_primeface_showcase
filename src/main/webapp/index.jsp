@@ -32,7 +32,7 @@ function hideURLbar() {
 <!-- //js -->
 <link href='https://fonts.googleapis.com/css?family=UnifrakturMaguntia'rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,600italic,700,400'rel='stylesheet' type='text/css'>
-<!-- FlexSlider -->"src/main/web"src/main/webapp/index.jsp"app/index.jsp"
+
 <p:link rel="stylesheet" href="${pageContext.request.contextPath}/css/flexslider.css" type="text/css"media="screen" />
 <script defer src="js/jquery.flexslider.js"></script>
 <script type="text/javascript">

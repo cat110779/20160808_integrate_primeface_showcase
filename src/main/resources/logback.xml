@@ -19,7 +19,7 @@
 		</encoder>
 	</appender>
 
-	<logger name="org.greenpeace.controller" level="debug"
+	<logger name="org.greenpeace" level="debug"
 		additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>

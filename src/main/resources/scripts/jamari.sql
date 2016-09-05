@@ -198,8 +198,13 @@ Insert into PRODUCT (ID,NAME,PRICE,RESTAURANT_ID) values (112,'脆皮鴨腿飯',
 Insert into PRODUCT (ID,NAME,PRICE,RESTAURANT_ID) values (113,'港式臘味飯',90,11);
 Insert into DEPOSIT (ID,DEPOSIT_CASH,DEPOSIT_TIME,MEMBER_ACCOUNT)values(1,999,to_timestamp('05-Jun -16 01.13.20 PM','DD-MON-RR HH.MI.SS AM'),'admin');
 Insert into DEPOSIT (ID,DEPOSIT_CASH,DEPOSIT_TIME,MEMBER_ACCOUNT)values(2,888,to_timestamp('06-Jun -16 01.13.20 PM','DD-MON-RR HH.MI.SS AM'),'admin');
-
-
+Insert into ORDERS (ID,RESTAURANT_ID,BEGIN_TIME,END_TIME,END_MONEY,MEMBER_ACCOUNT,STATUS,INFO,RESTAURANT_NAME) values (125,3,to_timestamp('13-Jun -16 09.57.05 PM','DD-MON-RR HH.MI.SS AM'),to_timestamp('13-Jun -16 10.56.00 PM','DD-MON-RR HH.MI.SS AM'),100,'admin','已成立',null,'二男小家料理');
+Insert into item(id,product_id,order_id,product_name)values(1,9,125,'二男海鮮丼');
+Insert into item(id,product_id,order_id,product_name)values(2,10,125,'男子漢海鮮丼');
+Insert into item(id,product_id,order_id,product_name)values(3,11,125,'娘子海鮮丼');
+Insert into item(id,product_id,order_id,product_name)values(4,12,125,'荒海散壽司丼');
+Insert into CUSTOMER(ID,ITEM_ID,MEMBER_ACCOUNT,COUNTS,MONEY,C_DATE,STATUS,ORDER_ID)values(1,2,'admin',1,360,to_timestamp('02-Sep -16 01.13.21 PM','DD-MON-RR HH.MI.SS AM'),'未取餐','125');
+Insert into M_ORDER(MEMBER_ACCOUNT,ORDER_ID,JOIN_DATE )values('admin',125,to_timestamp('02-Sep -16 01.13.20 PM','DD-MON-RR HH.MI.SS AM'));
 
 
 

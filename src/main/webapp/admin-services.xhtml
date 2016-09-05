@@ -118,41 +118,44 @@
 							<li><a href="take-meal.jsp">確認取餐</a></li>
 						</ul>
 					</ul>
-					
+
 					<div id="myTabContent" class="tab-content">
 						<div role="tabpanel" class="tab-pane fade in active" id="home"
 							aria-labelledby="home-tab">
 							<div class="bs-docs-example">
 								<br></br>
-								
-									
-										<tr>
-											<th>序號</th>
-											<th>儲值金額</th>
-											<th>儲值日期</th>
-										</tr>
-									<h:form>
-						<h:commandButton value="aaa" action="#{depositcash.depoist}" />
-<h:dataTable value="#{depositcash.rlist}" var="deposit">
-   
-   <h:column>    				
+								<table class="table table-hover">
+									<thead>
+										<h:form>
+											<h:commandButton value="sumbit"
+												action="#{depositcash.depoist}" />
+											<tr>
+												<th>序號</th>
+												<th>儲值金額</th>
+												<th>儲值日期</th>
+											</tr>
+											<tr>
+
+												<h:dataTable value="#{depositcash.rlist}" var="deposit">
+
+													<h:column>    				
       				
-      #{deposit.id}
-      #{deposit.depositCash}
-       #{deposit.depositTime}
-   </h:column>
-</h:dataTable>
+                                 <td>#{deposit.id}</td>
+                                <td> #{deposit.depositCash}</td>
+                               <td>  #{deposit.depositTime}</td>
+                                    </h:column>
+												</h:dataTable>
+											</tr>
 
 
 
 
 
+										</h:form>
+									</thead>
 
-					</h:form>
 
-
-
-							
+								</table>
 							</div>
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="profile"
@@ -166,35 +169,30 @@
 											<th>品項</th>
 											<th>數量</th>
 											<th>消費金額</th>
-											<!--                             <th>餘額</th> -->
+											
 											<th>消費日期</th>
 										</tr>
 									</thead>
 									<tbody>
-										<!-- for迴圈跑消費紀錄資料 -->
-										<!-- <%
-											ArrayList<CustomerSuper> customerList = null;
-															if(request.getAttribute("customerList") != null){
-																customerList = (ArrayList<CustomerSuper>)request.getAttribute("customerList");
-															} else {
-																customerList = new ArrayList<CustomerSuper>();
-															}
-														
-															index = 1;
-															for(CustomerSuper data : customerList){
-										%>
-										<tr>
-											<td><%=index%></td>
-											<td><%=data.getProduct_name()%></td>
-											<td><%=data.getCounts()%></td>
-											<td><%=data.getMoney()%></td>
-											<% 							  <td><%=data.getL_money() %></td> %>
-											<td><%=data.getConsume_date()%></td>
-										</tr>
-										<%
-											index++;
-															}
-										%> -->
+										<h:form>
+											<h:commandButton value="消費記錄"
+												action="#{depositorder.dosuper}" />
+											 <h:dataTable value="#{depositorder.osuper}" var="osuper">
+
+												<h:column>    				
+      				                    #{osuper.id}
+                                        #{osuper.product_name}
+                                        #{osuper.counts}
+                                        #{osuper.money}
+                                        #{osuper.consume_date}
+                                    </h:column>
+                                    
+											</h:dataTable>
+
+
+
+
+										</h:form>
 									</tbody>
 								</table>
 							</div>
@@ -214,27 +212,26 @@
 										</tr>
 									</thead>
 									<tbody>
-										<!-- for迴圈跑訂單狀態資料 -->
-										<!-- <%
-											ArrayList<OrderSuper> orderList = null;
-															if(request.getAttribute("orderList") != null){
-																orderList = (ArrayList<OrderSuper>)request.getAttribute("orderList");
-															} else {
-																orderList = new ArrayList<OrderSuper>();
-															}
-														
-															for(OrderSuper data : orderList){
-										%>
-										<tr>
-											<td><%=data.getId()%></td>
-											<td><%=data.getOrder_member()%></td>
-											<td><%=data.getOrder_date()%></td>
-											<td><%=data.getRestaurant_name()%></td>
-											<td><%=data.getStatus()%></td>
-										</tr>
-										<%
-											}
-										%> -->
+										<h:form>
+											<h:commandButton value="訂單狀態"
+												action="#{depositstatus.dstatus}" />
+											<h:dataTable value="#{depositstatus.status}" var="status">
+
+												<h:column>    				
+      				
+                                 #{status.id}
+                                 #{status.memberAccount}
+                               
+                                 #{status.restaurantName}
+                                 #{status.status}
+                                    </h:column>
+											</h:dataTable>
+
+
+
+
+										</h:form>
+										
 									</tbody>
 								</table>
 							</div>
@@ -253,7 +250,23 @@
 										</tr>
 									</thead>
 									<tbody>
+										<h:form>
+											<h:commandButton value="發起狀態"
+												action="#{depositstatus.dstatus}" />
+											<h:dataTable value="#{depositstatus.status}" var="status">
 
+												<h:column>    				
+      				
+                                 #{status.id}
+                                 #{status.beginTime}
+                                 #{status.restaurantName}
+                                 #{status.status}
+                                    </h:column>
+											</h:dataTable>
+
+
+
+										</h:form>
 									</tbody>
 								</table>
 							</div>
