@@ -79,14 +79,14 @@
 				<div class="collapse navbar-collapse nav-wil"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="ServiceServelet">回首頁</a></li>
-						<li><a href="menu.jsp">我要訂餐</a></li>
-						<li><a href="order.jsp">發起訂餐</a></li>
-						<li><a href="contact.jsp">聯絡我們</a></li>
-						<li><a href="Index.jsp">登出</a></li>
+						<li class="active"><a href="admin-service.xhtml">回首頁</a></li>
+						<li><a href="menu.xhtml">我要訂餐</a></li>
+						<li><a href="order.xhtml">發起訂餐</a></li>
+						<li><a href="contact.xhtml">聯絡我們</a></li>
+						<li><a href="index2.xhtml">登出</a></li>
 					</ul>
 				</div>
-				<!-- /.navbar-collapse --> </nav>
+				 </nav>
 			</div>
 		</div>
 	</div>
@@ -94,7 +94,10 @@
 	<!-- services -->
 	<div class="services">
 		<div class="container">
-			<h3>的個人紀錄 (餘額 : )</h3>
+			<h3>
+				<h:outputText value="#{sessionScope.account}" />
+				的個人紀錄 (餘額 : )
+			</h3>
 			<div class="line"></div>
 			<div class="grid_3 grid_5">
 				<div class="bs-example bs-example-tabs" role="tabpanel"
@@ -114,8 +117,8 @@
 							aria-controls="myTabDrop1-contents">管理者權限 <span class="caret"></span></a></li>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1"
 							id="myTabDrop1-contents">
-							<li><a href="card.jsp">儲值</a></li>
-							<li><a href="take-meal.jsp">確認取餐</a></li>
+							<li><a href="card.xhtml">儲值</a></li>
+							<li><a href="take-meal.xhtml">確認取餐</a></li>
 						</ul>
 					</ul>
 
@@ -123,152 +126,138 @@
 						<div role="tabpanel" class="tab-pane fade in active" id="home"
 							aria-labelledby="home-tab">
 							<div class="bs-docs-example">
-								<br></br>
-								<table class="table table-hover">
-									<thead>
+								
 										<h:form>
-											<h:commandButton value="sumbit"
-												action="#{depositcash.depoist}" />
-											<tr>
-												<th>序號</th>
-												<th>儲值金額</th>
-												<th>儲值日期</th>
-											</tr>
-											<tr>
+											<h:dataTable value="#{depositcash.rlist}" var="deposit"
+									class="table table-hover">
 
-												<h:dataTable value="#{depositcash.rlist}" var="deposit">
-
-													<h:column>    				
-      				
-                                 <td>#{deposit.id}</td>
-                                <td> #{deposit.depositCash}</td>
-                               <td>  #{deposit.depositTime}</td>
+									<h:column>
+										<f:facet name="header">序號</f:facet>
+													#{deposit.id}
+      								 </h:column>
+									<h:column>
+										<f:facet name="header">儲值金額</f:facet>
+                                 
+                                 #{deposit.depositCash}
+                                  </h:column>
+									<h:column>
+										<f:facet name="header">儲值日期</f:facet>
+                                #{deposit.depositTime}
                                     </h:column>
-												</h:dataTable>
-											</tr>
-
-
-
-
-
+								</h:dataTable>
 										</h:form>
-									</thead>
-
-
-								</table>
+									
 							</div>
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="profile"
 							aria-labelledby="profile-tab">
 							<div class="bs-docs-example">
-								<br></br>
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th>編號</th>
-											<th>品項</th>
-											<th>數量</th>
-											<th>消費金額</th>
-											
-											<th>消費日期</th>
-										</tr>
-									</thead>
-									<tbody>
+								
 										<h:form>
-											<h:commandButton value="消費記錄"
-												action="#{depositorder.dosuper}" />
-											 <h:dataTable value="#{depositorder.osuper}" var="osuper">
+											<h:dataTable value="#{depositorder.osuper}" var="osuper"
+									styleClass="table table-bordered">
 
-												<h:column>    				
+									<h:column>
+										<f:facet name="header">編號</f:facet>    				
       				                    #{osuper.id}
+      				                    </h:column>
+									<h:column>
+										<f:facet name="header">品項</f:facet>
                                         #{osuper.product_name}
+                                        </h:column>
+									<h:column>
+										<f:facet name="header">數量</f:facet>
                                         #{osuper.counts}
+                                        </h:column>
+									<h:column>
+										<f:facet name="header">消費金額</f:facet>
                                         #{osuper.money}
+                                        </h:column>
+									<h:column>
+										<f:facet name="header">消費日期</f:facet>
                                         #{osuper.consume_date}
+                                      
                                     </h:column>
-                                    
-											</h:dataTable>
 
+								</h:dataTable>
 
-
-
+											
 										</h:form>
-									</tbody>
-								</table>
+								
 							</div>
 
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="dropdown1"
 							aria-labelledby="dropdown1-tab">
 							<div class="bs-docs-example">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>訂單編號</th>
-											<th>發起人</th>
-											<th>下定日期</th>
-											<th>下定店家</th>
-											<th>訂單狀態</th>
-										</tr>
-									</thead>
-									<tbody>
+								
 										<h:form>
-											<h:commandButton value="訂單狀態"
-												action="#{depositstatus.dstatus}" />
-											<h:dataTable value="#{depositstatus.status}" var="status">
+										<h:dataTable value="#{depositstatus.status}" var="status"
+									styleClass="table">
 
-												<h:column>    				
+									<h:column>
+										<f:facet name="header">訂單編號</f:facet>  				
       				
                                  #{status.id}
+                                 </h:column>
+									<h:column>
+										<f:facet name="header">發起人</f:facet>
                                  #{status.memberAccount}
-                               
-                                 #{status.restaurantName}
-                                 #{status.status}
+                                 </h:column>}
+                                 	<h:column>
+										<f:facet name="header">下定日期</f:facet>
+
+
+									</h:column>
+									<h:column>
+										<f:facet name="header">下定店家</f:facet>
+										 #{status.restaurantName}
+                                 
                                     </h:column>
-											</h:dataTable>
-
-
+									<h:column>
+										<f:facet name="header">訂單狀態</f:facet>
+										#{status.status}
+										</h:column>
+								</h:dataTable>	
 
 
 										</h:form>
 										
-									</tbody>
-								</table>
+									
 							</div>
 						</div>
 
 						<div role="tabpanel" class="tab-pane fade" id="dropdown2"
 							aria-labelledby="dropdown2-tab">
 							<div class="bs-docs-example">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>訂單編號</th>
-											<th>發起日期</th>
-											<th>發起店家</th>
-											<th>訂單狀態</th>
-										</tr>
-									</thead>
-									<tbody>
+								
 										<h:form>
-											<h:commandButton value="發起狀態"
-												action="#{depositstatus.dstatus}" />
-											<h:dataTable value="#{depositstatus.status}" var="status">
+											
+								<h:dataTable value="#{depositstatus.status}" var="status"
+									styleClass="table">
 
-												<h:column>    				
+									<h:column>
+										<f:facet name="header">訂單編號</f:facet>  				
       				
                                  #{status.id}
+                                 </h:column>
+									<h:column>
+										<f:facet name="header">發起日期</f:facet>
                                  #{status.beginTime}
+                                 
+                                 </h:column>
+									<h:column>
+										<f:facet name="header">發起店家</f:facet>
                                  #{status.restaurantName}
+                                 </h:column>
+									<h:column>
+										<f:facet name="header">訂單狀態</f:facet>
                                  #{status.status}
                                     </h:column>
-											</h:dataTable>
-
-
+								</h:dataTable>
 
 										</h:form>
-									</tbody>
-								</table>
+									
 							</div>
 						</div>
 

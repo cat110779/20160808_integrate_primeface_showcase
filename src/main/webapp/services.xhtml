@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>餓揪訂餐網站</title>
+	<!-- for-mobile-apps -->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css"
+		media="all" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css"
+		media="screen" />
+</h:head>
+<body>
+	<div class="banner1">
+		<div class="container">
+			<div class="header-nav">
+				<nav class="navbar navbar-default"> <!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<div class="logo">
+						<a class="navbar-brand" href="index.xhtml"><b>餓揪訂餐 </b><span>Healthy
+								And Tasty Food</span></a>
+					</div>
+				</div>
+				<div class="collapse navbar-collapse nav-wil"
+					id="bs-example-navbar-collapse-1">
+					<h:form>
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="services.xhtml">回首頁</a></li>
+							<li><a href="menu.xhtml">我要訂餐</a></li>
+							<li><a href="order.xhtml">發起訂餐</a></li>
+							<li><a href="contact.xhtml">聯絡我們</a></li>
+							<li><h:commandLink action="#{logoutCtrl.logout}" value="登出">
+									<f:param name="pageId" value="1" />
+								</h:commandLink></li>
+						</ul>
+					</h:form>
+				</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="services">
+		<div class="container">
+			<h3>
+				<h:outputText value="#{sessionScope.account}" />
+				的個人紀錄 (餘額 : )
+			</h3>
+			<div class="line"></div>
+			<div class="grid_3 grid_5">
+				<div class="bs-example bs-example-tabs" role="tabpanel"
+					data-example-id="togglable-tabs">
+					<ul id="myTab" class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#home"
+							id="home-tab" role="tab" data-toggle="tab" aria-controls="home"
+							aria-expanded="true">查詢儲值記錄</a></li>
+						<li role="presentation"><a href="#profile" role="tab"
+							id="profile-tab" data-toggle="tab" aria-controls="profile">查詢消費紀錄</a></li>
+						<li role="presentation"><a href="#dropdown1" role="tab"
+							id="dropdown1-tab" data-toggle="tab" aria-controls="profile">查詢訂單狀態</a></li>
+						<li role="presentation"><a href="#dropdown2" role="tab"
+							id="dropdown2-tab" data-toggle="tab" aria-controls="profile">查詢發起狀態</a></li>
+						<li role="presentation" class="dropdown"><a href="#"
+							id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown"
+							aria-controls="myTabDrop1-contents">管理者權限 <span class="caret"></span></a></li>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1"
+							id="myTabDrop1-contents">
+							<li><a href="card.jsp">儲值</a></li>
+							<li><a href="take-meal.jsp">確認取餐</a></li>
+						</ul>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home"
+							aria-labelledby="home-tab">
+							<div class="bs-docs-example">
+								<br></br>
+								<table class="table table-hover">
+									<thead>
+										<h:form>
+											<h:commandButton value="sumbit"
+												action="#{depositcash.depoist}" />
+											<tr>
+												<th>序號</th>
+												<th>儲值金額</th>
+												<th>儲值日期</th>
+											</tr>
+											<tr>
+												<h:dataTable value="#{depositcash.rlist}" var="deposit">
+													<h:column>
+														<td>#{deposit.id}</td>
+														<td>#{deposit.depositCash}</td>
+														<td>#{deposit.depositTime}</td>
+													</h:column>
+												</h:dataTable>
+											</tr>
+										</h:form>
+									</thead>
+								</table>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="profile"
+							aria-labelledby="profile-tab">
+							<div class="bs-docs-example">
+								<br />
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>編號</th>
+											<th>品項</th>
+											<th>數量</th>
+											<th>消費金額</th>
+											<th>消費日期</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="dropdown1"
+							aria-labelledby="dropdown1-tab">
+							<div class="bs-docs-example">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>訂單編號</th>
+											<th>發起人</th>
+											<th>下定日期</th>
+											<th>下定店家</th>
+											<th>訂單狀態</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="dropdown2"
+							aria-labelledby="dropdown2-tab">
+							<div class="bs-docs-example">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>訂單編號</th>
+											<th>發起日期</th>
+											<th>發起店家</th>
+											<th>訂單狀態</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //services -->
+
+	<div class="footer-bottom">
+		<div class="container">
+			<p>&copy; - Copyright 2016© All rights reserved.</p>
+		</div>
+	</div>
+	<!--//footer-->
+	<!-- for bootstrap working -->
+	<script src="js/bootstrap.js">
+		
+	</script>
+	<!-- //for bootstrap working -->
+</body>
+</html>

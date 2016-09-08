@@ -1,8 +1,10 @@
 package org.greenpeace.bean;
 
+
 import java.util.Date;
 
 public class CustomerSuper {
+	
 	
 	private int id;
 	private int item_id;

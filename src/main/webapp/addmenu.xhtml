@@ -6,7 +6,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
-	
+
 <h:head>
 	<title>餓揪訂餐網站</title>
 	<f:facet name="first">
@@ -42,90 +42,100 @@
 
 
 </h:head>
-	
+
 <h:body>
 
-<!-- banner -->
+	<!-- banner -->
 	<div class="banner1">
 		<div class="container">
 			<div class="header-nav">
-				<nav class="navbar navbar-default">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					  </button>
-						<div class="logo">
-							<a class="navbar-brand" href="index.jsp"><b>餓揪訂餐 </b><span>Healthy And Tasty Food</span></a>
-						</div>
+				<nav class="navbar navbar-default"> <!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<div class="logo">
+						<a class="navbar-brand" href="index.jsp"><b>餓揪訂餐 </b><span>Healthy
+								And Tasty Food</span></a>
 					</div>
+				</div>
 
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-					  <ul class="nav navbar-nav">
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
 						<li><a href="ServiceServelet">回首頁</a></li>
 						<li class="active"><a href="menu.jsp">我要訂餐</a></li>
 						<li><a href="order.jsp">發起訂餐</a></li>
 						<li><a href="contact.jsp">聯絡我們</a></li>
-                        <li><a href="Index.jsp">登出</a>  </li> 
-					  </ul>
-					</div><!-- /.navbar-collapse -->
-				</nav>
+						<li><a href="Index.jsp">登出</a></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse --> </nav>
 			</div>
 		</div>
 	</div>
-<!-- //banner -->
-<!-- menu -->
+	<!-- //banner -->
+	<!-- menu -->
 	<div class="menu-page">
 		<div class="container">
 			<div class="menu-title">
-				<h3> 訂購 </h3>
-                <div class="line">
-				</div>
-                <br></br>
-               
-				
+				<h3>訂購</h3>
+				<div class="line"></div>
+				<br></br>
+
+
 			</div>
-            
-            <div class="bs-docs-example">
-            
-            <form action="CheckOutServlet" method="post">
-                	
-				<table class="table table-hover">
-					
-						<tr>
-						  <th>名稱</th>
-						  <th>價錢</th>
-						  <th>數量</th>
-                          <th></th>
-						</tr>
-					<tbody>
-						
-					</tbody>
-				</table>
-                
-                	<div class="search">
-                	<h:commandButton type="submit"   value="結帳" ></h:commandButton>
-						
+
+			<div class="bs-docs-example">
+
+				<form action="CheckOutServlet" method="post">
+
+
+					<h:dataTable value="#{omenu.pro}" var="pro"
+						class="table table-hover">
+
+						<h:column>
+							<f:facet name="header">名稱</f:facet>
+													#{pro.name}
+      								 </h:column>
+						<h:column>
+							<f:facet name="header">價錢</f:facet>
+                                 
+                                 #{pro.price}
+                                  </h:column>
+						<h:column>
+							<f:facet name="header">數量</f:facet>
+							<h:outputLabel for="minMax" value="0-99" />
+							<p:spinner id="minMax" value="#{omenu.odcount}" min="0" max="99" />
+
+						</h:column>
+					</h:dataTable>
+
+					<div class="search">
+						<h:commandButton type="submit" value="結帳"></h:commandButton>
+
 					</div>
 				</form>
 			</div>
-			
+
 		</div>
 	</div>
-<!-- //menu -->
-<!--footer-->
+	<!-- //menu -->
+	<!--footer-->
 	<div class="footer-bottom">
-		<div class="container">		
-			<p>&copy;  - Copyright 2016© All rights reserved.</p>					
+		<div class="container">
+			<p>&copy; - Copyright 2016© All rights reserved.</p>
 		</div>
 	</div>
-<!--//footer-->	
-<!-- for bootstrap working -->
-		<script src="js/bootstrap.js"> </script>
-<!-- //for bootstrap working -->
+	<!--//footer-->
+	<!-- for bootstrap working -->
+	<script src="js/bootstrap.js">
+		
+	</script>
+	<!-- //for bootstrap working -->
 </h:body>
 </html>

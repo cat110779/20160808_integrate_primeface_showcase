@@ -1,9 +1,9 @@
-<%@page import="org.greenpeace.bean.OrderSuper"%>
-<%@page import="org.greenpeace.bean.Order"%>
-<%@page import="org.greenpeace.bean.CustomerSuper"%>
+<%@page import="org.greenpeace.model.OrderSuper"%>
+<%@page import="org.greenpeace.model.Order"%>
+<%@page import="org.greenpeace.model.CustomerSuper"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="org.greenpeace.bean.Deposit"%>
+<%@page import="org.greenpeace.model.Deposit"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -21,11 +21,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar(){ window.scrollTo(0,1); } 
 </script>
 <!-- //for-mobile-apps -->
-<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" type="text/css"
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"
 	media="all" />
-<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
+<script src="/js/jquery-1.11.1.min.js"></script>
 <!-- //js -->
 <!-- FlexSlider -->
 <link rel="stylesheet" href="css/flexslider.css" type="text/css"
@@ -48,12 +48,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-	<%
+	<%-- <%
 		HttpSession se = request.getSession();
 		if(se.getAttribute("account")==null){
 			response.sendRedirect("Index.jsp");
 		}
-	%>
+	%> --%>
 	<script>
 		(function(i, s, o, g, r, a, m) {
 			i['GoogleAnalyticsObject'] = r;

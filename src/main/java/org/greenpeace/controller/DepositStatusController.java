@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -22,7 +23,8 @@ public class DepositStatusController implements Serializable{
 	private static final Logger LOGGER = LoggerFactory.getLogger(DepositStatusController.class);
 	
 	private List<Order> status=null;
-public String dstatus(){
+	@PostConstruct
+public void dstatus(){
 	FacesContext context = FacesContext.getCurrentInstance();//session用
 	HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
 	String account = (String) session.getAttribute("account");
@@ -31,7 +33,7 @@ public String dstatus(){
    status =dao.getOrderByAccount(account);
   
    for(Order order :status){
-	   SimpleDateFormat test = new SimpleDateFormat("yyyy/MM/dd ");
+	   SimpleDateFormat test = new SimpleDateFormat("yyyy/MM/dd HH:mm ");
    
 	   LOGGER.debug(Integer.toString(order.getId()));
 	   LOGGER.debug(test.format(order.getBeginTime()));
@@ -42,7 +44,7 @@ public String dstatus(){
 	   
 	   
    }
-	return null;
+
 	
 		
 }

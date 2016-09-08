@@ -92,6 +92,7 @@
 	</div>
 	<!-- //banner -->
 	<!-- menu -->
+	
 	<div class="menu-page">
 		<div class="container">
 			<div class="services-grid">
@@ -154,37 +155,34 @@
 					</script>
 				</div>
 			</div>
+			
 			<div class="menu-title">
 				<h3>進行中的訂餐</h3>
+				
 				<div class="line"></div>
 			</div>
 			<div class="menu-page-grids">
-
-				<!-- <%
-					for(Order o:allOrder){
-				      		if(!o.getMemberAccount().equals(account)  && now-o.getEndTime().getTime()<0 ){
-				%> -->
 				<div class="col-md-4 menu-grids-info">
-					<!-- <%if(o.getRtype().equals("便當")) {%>
-							<img src="images/type/rice.jpg" alt="" title="" />
-						<%}else if(o.getRtype().equals("速食")){ %>
-							<img src="images/type/fast_food.jpg" alt="" title="" />
-						<%}else if(o.getRtype().equals("日式")){ %>
-							<img src="images/type/Japan.jpg" alt="" title="" />
-						<%}else if(o.getRtype().equals("點心")){ %>
-							<img src="images/type/snack.jpg" alt="" title="" />
-						<%} %> -->
 						
 					<h4>
-						<span><!-- <%=o.getMemberAccount()%></span>發起的 <span><%=o.getRestaurantName()%> --></span>
+						<span></span>
 					</h4>
 					<h4>
-						<!-- <a href="Startservlet?order_id=<%=o.getId() %>&restaurantID=<%=o.getRestaurantId()%>"> --><a><span class="label label-danger">我要訂</span></a>
+				<h:form>
+				<h:commandButton value="按" action="#{omenu.odermenu}"></h:commandButton>
+				
+				
+				
+				
+				
+				
+				</h:form>
+						 <a><span class="label label-danger">我要訂</span></a>
 					</h4>
 					
 					<div class="menu-rate">
 						<h5>
-						<!-- 	$<%=o.getMoney()%> --></h5>
+						</h5>
 					</div>
 				</div>
 				
@@ -193,6 +191,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<!-- //menu -->
 	<!--footer-->
 	<div class="footer-bottom">
@@ -205,6 +204,6 @@
 	<script src="js/bootstrap.js">
 		
 	</script>
-	<!-- //for bootstrap working -->
+
 </h:body>
 </html>
