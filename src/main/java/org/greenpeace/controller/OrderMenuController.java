@@ -1,17 +1,18 @@
 package org.greenpeace.controller;
 
 import java.io.Serializable;
-
-
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import org.greenpeace.bean.Order;
 import org.greenpeace.bean.Product;
+import org.greenpeace.bean.ProductDto;
 import org.greenpeace.bean.Restaurant;
 import org.greenpeace.dao.OrderDAO;
 import org.greenpeace.dao.ProductDAO;
@@ -20,14 +21,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @ManagedBean(name = "omenu")
-@RequestScoped
+@SessionScoped
 public class OrderMenuController implements Serializable {
 
 	private static final long serialVersionUID = -5583905550715921385L;
 	private static final Logger LOGGER = LoggerFactory.getLogger(OrderMenuController.class);
 	private List<Order> allOrder = null;
     private List<Restaurant>allRest =null;
-    private List<Product> pro =null;
+    private List<ProductDto> pro =null;
     private int odcount;
 	
 
@@ -71,13 +72,12 @@ public class OrderMenuController implements Serializable {
 				if(rest.getId()==odmenu.getRestaurantId()){
 					LOGGER.debug(rest.getRType());
 					LOGGER.debug(rest.getName());
-					 pro = pDao.getProductByRestaurantId(odmenu.getRestaurantId());
-					 for(Product product : pro){
+					 List<Product> proOriginal = pDao.getProductByRestaurantId(odmenu.getRestaurantId());
+					 pro = new LinkedList <ProductDto> ();
+					 for(Product product : proOriginal){
 							LOGGER.debug(product.getName());
 							LOGGER.debug(Integer.toString(product.getPrice()));
-							
-							
-							
+							pro.add(new ProductDto(product ,0 ));	
 							
 					}
 				}
@@ -102,11 +102,11 @@ public class OrderMenuController implements Serializable {
 		this.allRest = allRest;
 	}
 
-	public List<Product> getPro() {
+	public List<ProductDto> getPro() {
 		return pro;
 	}
 
-	public void setPro(List<Product> pro) {
+	public void setPro(List<ProductDto> pro) {
 		this.pro = pro;
 	}
 

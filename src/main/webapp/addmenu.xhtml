@@ -92,7 +92,7 @@
 
 			<div class="bs-docs-example">
 
-				<form action="CheckOutServlet" method="post">
+				<h:form  >
 
 
 					<h:dataTable value="#{omenu.pro}" var="pro"
@@ -100,26 +100,27 @@
 
 						<h:column>
 							<f:facet name="header">名稱</f:facet>
-													#{pro.name}
+													#{pro.data.name}
       								 </h:column>
 						<h:column>
 							<f:facet name="header">價錢</f:facet>
                                  
-                                 #{pro.price}
+                                 #{pro.data.price}
                                   </h:column>
 						<h:column>
 							<f:facet name="header">數量</f:facet>
-							<h:outputLabel for="minMax" value="0-99" />
-							<p:spinner id="minMax" value="#{omenu.odcount}" min="0" max="99" />
+							
+							<h:outputLabel for="minMax" />
+							<p:spinner id="minMax" value="#{pro.number}" min="0" max="99" />
 
 						</h:column>
 					</h:dataTable>
 
 					<div class="search">
-						<h:commandButton type="submit" value="結帳"></h:commandButton>
+						<h:commandButton type="submit" value="結帳" action="#{cpmoney.compareMoney(omenu.pro)}"></h:commandButton>
 
 					</div>
-				</form>
+				</h:form>
 			</div>
 
 		</div>
